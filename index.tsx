@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
+import Tank from './Tank';
 import './style.css';
 
-interface AppProps { }
+interface AppProps {}
 interface AppState {
   name: string;
 }
@@ -14,15 +14,34 @@ class App extends Component<AppProps, AppState> {
     this.state = {
       name: 'React'
     };
+    this.counter = 0;
+    this.timer = null;
+    this.tank = React.createRef();
   }
+
+  componentDidMount() {
+    this.timer = setInterval(this.doRoutine, 1000);
+  }
+
+  doRoutine = function() {
+    if (this.counter === Number.MAX_SAFE_INTEGER) this.counter = 0;
+    switch (this.counter) {
+      case 1:
+        console.log(this.base);
+        this.tank.current.dispatchEvent(
+          new CustomEvent('pushDisc', {
+            detail: { identifier: 'doRoutine' }
+          })
+        );
+        break;
+    }
+    this.counter++;
+  }.bind(this);
 
   render() {
     return (
       <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
+        <Tank ref={this.tank} />
       </div>
     );
   }
