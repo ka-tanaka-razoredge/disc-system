@@ -72,24 +72,26 @@ export default (props: { identifier: string }, ref) => {
             transform: ''
           }}
         >
-          {props.discs.map((disc, index) => {
-            if ('type' in disc === false || disc.type === 'Disc') {
-              return (
-                <Disc
-                  identifier={disc.identifier}
-                  contentsForFrontInner={disc.contentsForFrontInner}
-                />
-              );
-            } else {
-              return (
-                <Magazine
-                  identifier={disc.identifier}
-                  contentsForFrontInner={disc.contentsForFrontInner}
-                  discs={disc.discs}
-                  height={disc.height}
-                />
-              );
-            }
+          {props.discs.map((line, index) => {
+            return line.map((disc, i) => {
+              if ('type' in disc === false || disc.type === 'Disc') {
+                return (
+                  <Disc
+                    identifier={disc.identifier}
+                    contentsForFrontInner={disc.contentsForFrontInner}
+                  />
+                );
+              } else {
+                return (
+                  <Magazine
+                    identifier={disc.identifier}
+                    contentsForFrontInner={disc.contentsForFrontInner}
+                    discs={disc.discs}
+                    height={disc.height}
+                  />
+                );
+              }
+            });
           })}
         </div>
       </div>
