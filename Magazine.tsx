@@ -73,12 +73,13 @@ export default (props: { identifier: string }, ref) => {
           }}
         >
           {props.discs.map((line, index) => {
-            return line.map((disc, i) => {
+            return line.map((disc, index) => {
               if ('type' in disc === false || disc.type === 'Disc') {
                 return (
                   <Disc
                     identifier={disc.identifier}
                     contentsForFrontInner={disc.contentsForFrontInner}
+                    top={disc.top}
                   />
                 );
               } else {

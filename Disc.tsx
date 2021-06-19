@@ -27,7 +27,7 @@ export default (props: { identifier: string }, ref) => {
         border: '1px solid orange',
         height: 10 + 'px',
         width: 100 + 'px',
-        top: 0 + 'px',
+        top: props.top + 'px',
         left: 0 + 'px',
         position: 'absolute'
       }}

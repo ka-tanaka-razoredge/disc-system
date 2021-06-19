@@ -37,7 +37,14 @@ class App extends Component<AppProps, AppState> {
               left: 500,
               height: 500,
               discs: [
-                [{ indentifier: 'a_alpha_on_', contentsForFrontInner: `Au` }]
+                [
+                  {
+                    indentifier: 'a_alpha_on_',
+                    contentsForFrontInner: `Au`,
+                    top: 10
+                  }
+                ],
+                [{ identifier: 'Cu', contentsForFrontInner: `Cu`, top: 100 }]
               ]
             }
           })
