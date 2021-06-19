@@ -25,8 +25,7 @@ export default (props: { identifier: string }, ref) => {
       id={props.identifier}
       style={{
         transformStyle: 'preserve-3d',
-        border: '1px solid orange',
-        backgroundColor: 'rgba(250, 250, 250, 0.9)',
+        backgroundColor: 'orange',
         height: props.height + 'px',
         width: 2 + 'px',
         top: props.top + 'px',
@@ -46,7 +45,9 @@ export default (props: { identifier: string }, ref) => {
             'translateY(-20px) rotateX(-90deg) translateY(-30px) translateX(-5px)'
         }}
       >
-        {props.contentsForFrontInner}
+        <div
+          dangerouslySetInnerHTML={{ __html: props.contentsForFrontInner }}
+        />
       </div>
     </div>
   );

@@ -38,14 +38,14 @@ class App extends Component<AppProps, AppState> {
               height: 300,
               width: 300,
               discs: [
-                [{ identifier: 'Cu', contentsForFrontInner: `Cu`, top: 0 }],
+                [{ identifier: 'Au', contentsForFrontInner: `Au`, top: 0 }],
                 [{ identifier: 'Pt', contentsForFrontInner: `Pt`, top: 200 }],
-                [{ identifier: 'a', contentsForFrontInner: `Au`, top: 100 }],
+                [{ identifier: 'Cu', contentsForFrontInner: `Cu`, top: 100 }],
                 [
                   {
                     type: 'MetalTape',
                     identifier: '『Au, Cu, Pt』',
-                    contentsForFrontInner: `『Au, Cu, Pt』`,
+                    contentsForFrontInner: `<font color='green'>『Au, Cu, Pt』</font>`,
                     top: 0,
                     left: 110,
                     height: 210

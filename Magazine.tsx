@@ -74,7 +74,7 @@ export default (props: { identifier: string }, ref) => {
           style={{
             transformStyle: 'preserve-3d',
             border: 'solid 1px green',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
             position: 'absolute',
             width: props.width + 'px',
             height: props.height + 'px',
