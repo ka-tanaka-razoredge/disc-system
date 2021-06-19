@@ -65,7 +65,7 @@ export default (props: { identifier: string }, ref) => {
           border: 'solid 1px red',
           position: 'absolute',
           top: 0 + 'px',
-          height: 0 + 'px',
+          //          height: 0 + 'px',
           transform: 'rotateX(0deg)'
         }}
       >

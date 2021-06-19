@@ -42,7 +42,7 @@ class App extends Component<AppProps, AppState> {
                   {
                     indentifier: 'a_alpha_on_',
                     contentsForFrontInner: `Au`,
-                    top: 10
+                    top: 0
                   }
                 ],
                 [{ identifier: 'Cu', contentsForFrontInner: `Cu`, top: 100 }],

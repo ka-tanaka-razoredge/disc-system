@@ -30,7 +30,8 @@ export default (props: { identifier: string }, ref) => {
         width: 100 + 'px',
         top: props.top + 'px',
         left: 0 + 'px',
-        position: 'absolute'
+        position: 'absolute',
+        zIndex: 1000
       }}
     >
       {props.identifier}
