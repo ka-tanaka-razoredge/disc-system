@@ -24,6 +24,23 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
 
   const pushDisc = (lop = { itentifier }) => {
     setDiscEx(discs.concat(lop));
+    setTimeout(() => {
+      document.getElementById(lop.identifier).dispatchEvent(
+        new CustomEvent('moveX', {
+          detail: {
+            value: lop.left
+          }
+        })
+      );
+      document.getElementById(lop.identifier).dispatchEvent(
+        new CustomEvent('moveY', {
+          detail: {
+            value: lop.top
+          }
+        })
+      );
+    }, 1);
+
     //console.log(discs.length);
     //console.log(discs);
     //console.log(lop);
@@ -34,7 +51,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
       ref={ref}
       style={{
         transformStyle: 'preserve-3d',
-        perspective: 800 + 'px',
+        //perspective: 800 + 'px',
         border: '1px solid red',
         width: 800 + 'px',
         height: 450 + 'px',
