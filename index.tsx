@@ -27,10 +27,15 @@ class App extends Component<AppProps, AppState> {
     if (this.counter === Number.MAX_SAFE_INTEGER) this.counter = 0;
     switch (this.counter) {
       case 1:
-        console.log(this.base);
         this.tank.current.dispatchEvent(
           new CustomEvent('pushDisc', {
-            detail: { identifier: 'doRoutine' }
+            detail: { identifier: 'doRoutine', left: 100 + 'px' }
+          })
+        );
+
+        this.tank.current.dispatchEvent(
+          new CustomEvent('pushDisc', {
+            detail: { identifier: 'a_beta' }
           })
         );
         break;
