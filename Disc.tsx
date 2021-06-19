@@ -24,7 +24,7 @@ export default (props: { identifier: string }, ref) => {
       ref={base}
       id={props.identifier}
       style={{
-        border: '1px solid blue',
+        border: '1px solid orange',
         height: 10 + 'px',
         width: 100 + 'px',
         top: 0 + 'px',

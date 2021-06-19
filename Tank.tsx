@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Disc from './Disc';
+import Magazine from './Magazine';
 
 export default React.forwardRef((props: { identifier: string }, ref) => {
   //const base = useRef(null);
@@ -58,12 +59,23 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
     >
       {discsRef.current.map((disc: { identifier }, index) => {
         if (discsRef.current.indexOf(disc.identifier) == -1) {
-          return (
-            <Disc
-              identifier={disc.identifier}
-              contentsForFrontInner={disc.contentsForFrontInner}
-            />
-          );
+          if ('type' in disc === false || disc.type === 'Disc') {
+            return (
+              <Disc
+                identifier={disc.identifier}
+                contentsForFrontInner={disc.contentsForFrontInner}
+              />
+            );
+          } else {
+            return (
+              <Magazine
+                identifier={disc.identifier}
+                contentsForFrontInner={disc.contentsForFrontInner}
+                discs={disc.discs}
+                height={disc.height}
+              />
+            );
+          }
         }
       })}
     </div>

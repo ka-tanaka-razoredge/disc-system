@@ -1,11 +1,46 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import Disc from './Disc';
 
-export default () => {
+export default (props: { identifier: string }, ref) => {
+  const base = useRef(null);
+  const joint = useRef(null);
+
+  const [discs, setDiscs] = useState([]);
+
+  useEffect(() => {
+    base.current.addEventListener('moveX', e => {
+      moveX(e.detail.value);
+    });
+    base.current.addEventListener('moveY', e => {
+      moveY(e.detail.value);
+    });
+
+    base.current.addEventListener('dblclick', function(e) {
+      rotateX(90);
+    });
+
+    joint.current.addEventListener('rotateX', e => {
+      rotateX(e.detail.value);
+    });
+  });
+
+  const moveX = value => {
+    base.current.style.left = value + 'px';
+  };
+  const moveY = value => {
+    base.current.style.top = value + 'px';
+  };
+
+  const rotateX = value => {
+    joint.current.style.transform = 'rotateX(' + value + 'deg)';
+  };
+
   return (
     <div
       ref={base}
       id={props.identifier}
       style={{
+        transformStyle: 'preserve-3d',
         border: '1px solid blue',
         height: 10 + 'px',
         width: 100 + 'px',
@@ -14,18 +49,49 @@ export default () => {
         position: 'absolute'
       }}
     >
-      {props.identifier}
       <div
+        ref={joint}
         style={{
           transformStyle: 'preserve-3d',
-          border: 'solid 1px lime',
-          position: 'relative',
-          width: 100 + 'px',
-          height: 50 + 'px',
-          transform: 'translateY(-70px) rotateX(-90deg) translateX(30px)'
+          border: 'solid 1px red',
+          position: 'absolute',
+          top: 0 + 'px',
+          height: 0 + 'px',
+          transform: 'rotateX(0deg)'
         }}
       >
-        {props.identifier}
+        <div
+          style={{
+            transformStyle: 'preserve-3d',
+            border: 'solid 1px green',
+            position: 'absolute',
+            width: 100 + 'px',
+            height: props.height + 'px',
+            top: 0 + 'px',
+            left: 0 + 'px',
+            transform: ''
+          }}
+        >
+          {props.discs.map((disc, index) => {
+            if ('type' in disc === false || disc.type === 'Disc') {
+              return (
+                <Disc
+                  identifier={disc.identifier}
+                  contentsForFrontInner={disc.contentsForFrontInner}
+                />
+              );
+            } else {
+              return (
+                <Magazine
+                  identifier={disc.identifier}
+                  contentsForFrontInner={disc.contentsForFrontInner}
+                  discs={disc.discs}
+                  height={disc.height}
+                />
+              );
+            }
+          })}
+        </div>
       </div>
     </div>
   );

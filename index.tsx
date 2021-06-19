@@ -30,6 +30,21 @@ class App extends Component<AppProps, AppState> {
         this.tank.current.dispatchEvent(
           new CustomEvent('pushDisc', {
             detail: {
+              type: 'Magazine',
+              identifier: 'tc_0_alpha',
+              contentsForFrontInner: `spine`,
+              top: 100,
+              left: 500,
+              height: 500,
+              discs: [
+                [{ indentifier: 'a_alpha_on_', contentsForFrontInner: `Au` }]
+              ]
+            }
+          })
+        );
+        this.tank.current.dispatchEvent(
+          new CustomEvent('pushDisc', {
+            detail: {
               identifier: 'tc_0_alpha',
               contentsForFrontInner: ``,
               top: 100,
@@ -37,6 +52,7 @@ class App extends Component<AppProps, AppState> {
             }
           })
         );
+        /*
         this.tank.current.dispatchEvent(
           new CustomEvent('pushDisc', {
             detail: {
@@ -47,7 +63,7 @@ class App extends Component<AppProps, AppState> {
             }
           })
         );
-
+*/
         break;
     }
     this.counter++;
