@@ -23,7 +23,8 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
   });
 
   const pushDisc = (lop = { itentifier }) => {
-    setDiscEx(discs.concat(lop));
+    console.log(discsRef.current);
+    setDiscEx(discsRef.current.concat(lop));
     setTimeout(() => {
       document.getElementById(lop.identifier).dispatchEvent(
         new CustomEvent('moveX', {
@@ -40,12 +41,8 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
         })
       );
     }, 1);
-
-    //console.log(discs.length);
-    //console.log(discs);
-    //console.log(lop);
   };
-  //  return <div ref={ref} style={{ 'tranform-style': 'preserved-3d' }} />;
+
   return (
     <div
       ref={ref}
@@ -59,9 +56,14 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
         transform: 'rotateY(40deg) rotateX(45deg)'
       }}
     >
-      {discs.map((disc: { identifier }, index) => {
-        if (discs.indexOf(disc.identifier) == -1) {
-          return <Disc identifier={disc.identifier} />;
+      {discsRef.current.map((disc: { identifier }, index) => {
+        if (discsRef.current.indexOf(disc.identifier) == -1) {
+          return (
+            <Disc
+              identifier={disc.identifier}
+              contentsForFrontInner={disc.contentsForFrontInner}
+            />
+          );
         }
       })}
     </div>

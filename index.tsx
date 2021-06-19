@@ -29,16 +29,24 @@ class App extends Component<AppProps, AppState> {
       case 1:
         this.tank.current.dispatchEvent(
           new CustomEvent('pushDisc', {
-            detail: { identifier: 'tc_0_alpha', top: 100, left: 500 }
+            detail: {
+              identifier: 'tc_0_alpha',
+              contentsForFrontInner: ``,
+              top: 100,
+              left: 500
+            }
           })
         );
-        /*
         this.tank.current.dispatchEvent(
           new CustomEvent('pushDisc', {
-            detail: { identifier: 'a_beta' }
+            detail: {
+              identifier: 'tc_0_beta',
+              contentsForFrontInner: ``,
+              top: 100,
+              left: 600
+            }
           })
         );
-*/
 
         break;
     }

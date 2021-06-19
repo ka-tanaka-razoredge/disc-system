@@ -1,24 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 
-export default (props: { identifier: string }, ref) => {
-  const base = useRef(null);
-
-  useEffect(() => {
-    base.current.addEventListener('moveX', e => {
-      moveX(e.detail.value);
-    });
-    base.current.addEventListener('moveY', e => {
-      moveY(e.detail.value);
-    });
-  });
-
-  const moveX = value => {
-    base.current.style.left = value + 'px';
-  };
-  const moveY = value => {
-    base.current.style.top = value + 'px';
-  };
-
+export default () => {
   return (
     <div
       ref={base}
@@ -43,7 +25,7 @@ export default (props: { identifier: string }, ref) => {
           transform: 'translateY(-70px) rotateX(-90deg) translateX(30px)'
         }}
       >
-        {props.contentsForFrontInner}
+        {props.identifier}
       </div>
     </div>
   );
