@@ -26,23 +26,24 @@ export default (props: { identifier: string }, ref) => {
       style={{
         transformStyle: 'preserve-3d',
         border: '1px solid orange',
-        height: 10 + 'px',
-        width: 100 + 'px',
+        backgroundColor: 'rgba(250, 250, 250, 0.9)',
+        height: props.height + 'px',
+        width: 2 + 'px',
         top: props.top + 'px',
-        left: 0 + 'px',
+        left: props.left + 'px',
         position: 'absolute'
       }}
     >
-      {props.identifier}
       <div
         style={{
           transformStyle: 'preserve-3d',
           border: 'solid 1px lime',
-          //          position: 'relative',
+          position: 'absolute',
           width: 100 + 'px',
           height: 50 + 'px',
+          top: props.height,
           transform:
-            'translateY(-40px) translateX(-5px) rotateX(-90deg) translateY(-30px)'
+            'translateY(-20px) rotateX(-90deg) translateY(-30px) translateX(-5px)'
         }}
       >
         {props.contentsForFrontInner}

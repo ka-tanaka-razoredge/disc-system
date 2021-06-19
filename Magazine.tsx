@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Disc from './Disc';
+import MetalTape from './MetalTape';
 import Magazine from './Magazine';
 
 export default (props: { identifier: string }, ref) => {
@@ -65,7 +66,7 @@ export default (props: { identifier: string }, ref) => {
           border: 'solid 1px red',
           position: 'absolute',
           top: 0 + 'px',
-          //          height: 0 + 'px',
+          height: 0 + 'px',
           transform: 'rotateX(0deg)'
         }}
       >
@@ -92,7 +93,7 @@ export default (props: { identifier: string }, ref) => {
                     top={disc.top}
                   />
                 );
-              } else {
+              } else if (disc.type === 'Magazine') {
                 return (
                   <Magazine
                     identifier={disc.identifier}
@@ -100,6 +101,16 @@ export default (props: { identifier: string }, ref) => {
                     discs={disc.discs}
                     height={disc.height}
                     width={disc.width}
+                  />
+                );
+              } else if (disc.type === 'MetalTape') {
+                return (
+                  <MetalTape
+                    identifier={disc.identifier}
+                    contentsForFrontInner={disc.contentsForFrontInner}
+                    top={disc.top}
+                    left={disc.left}
+                    height={disc.height}
                   />
                 );
               }

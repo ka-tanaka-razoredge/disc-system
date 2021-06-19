@@ -35,18 +35,22 @@ class App extends Component<AppProps, AppState> {
               contentsForFrontInner: `spine`,
               top: 100,
               left: 500,
-              height: 500,
+              height: 300,
               width: 300,
               discs: [
+                [{ identifier: 'Cu', contentsForFrontInner: `Cu`, top: 0 }],
+                [{ identifier: 'Pt', contentsForFrontInner: `Pt`, top: 200 }],
+                [{ identifier: 'a', contentsForFrontInner: `Au`, top: 100 }],
                 [
                   {
-                    indentifier: 'a_alpha_on_',
-                    contentsForFrontInner: `Au`,
-                    top: 0
+                    type: 'MetalTape',
+                    identifier: '『Au, Cu, Pt』',
+                    contentsForFrontInner: `『Au, Cu, Pt』`,
+                    top: 0,
+                    left: 110,
+                    height: 210
                   }
-                ],
-                [{ identifier: 'Cu', contentsForFrontInner: `Cu`, top: 100 }],
-                [{ identifier: 'Pt', contentsForFrontInner: `Pt`, top: 200 }]
+                ]
               ]
             }
           })
@@ -96,6 +100,17 @@ class App extends Component<AppProps, AppState> {
               contentsForFrontInner: ``,
               top: 100,
               left: 500
+            }
+          })
+        );
+
+        this.tank.current.dispatchEvent(
+          new CustomEvent('pushDisc', {
+            detail: {
+              identifier: 'tc_0_a',
+              contentsForFrontInner: ``,
+              top: 100,
+              left: 300
             }
           })
         );
