@@ -36,6 +36,7 @@ class App extends Component<AppProps, AppState> {
               top: 100,
               left: 500,
               height: 500,
+              width: 300,
               discs: [
                 [
                   {
@@ -44,11 +45,50 @@ class App extends Component<AppProps, AppState> {
                     top: 10
                   }
                 ],
+                [{ identifier: 'Cu', contentsForFrontInner: `Cu`, top: 100 }],
+                [{ identifier: 'Pt', contentsForFrontInner: `Pt`, top: 200 }]
+              ]
+            }
+          })
+        );
+        /*
+        // ooMagazine_2 on ooMagazine_1
+        this.tank.current.dispatchEvent(
+          new CustomEvent('pushDisc', {
+            detail: {
+              type: 'Magazine',
+              identifier: 'tc_0_',
+              contentsForFrontInner: `spine`,
+              top: 100,
+              left: 200,
+              height: 500,
+              width: 100,
+              discs: [
+                [
+                  {
+                    type: 'Magazine',
+                    indentifier: 'a_alpha_on',
+                    contentsForFrontInner: `Au`,
+                    top: 10,
+                    height: 100,
+                    width: 100,
+                    discs: [
+                      [
+                        {
+                          identifier: 'Cu',
+                          contentsForFrontInner: `Cu`,
+                          top: 0
+                        }
+                      ]
+                    ]
+                  }
+                ],
                 [{ identifier: 'Cu', contentsForFrontInner: `Cu`, top: 100 }]
               ]
             }
           })
         );
+*/
         this.tank.current.dispatchEvent(
           new CustomEvent('pushDisc', {
             detail: {
@@ -59,18 +99,7 @@ class App extends Component<AppProps, AppState> {
             }
           })
         );
-        /*
-        this.tank.current.dispatchEvent(
-          new CustomEvent('pushDisc', {
-            detail: {
-              identifier: 'tc_0_beta',
-              contentsForFrontInner: ``,
-              top: 100,
-              left: 600
-            }
-          })
-        );
-*/
+
         break;
     }
     this.counter++;

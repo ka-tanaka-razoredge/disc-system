@@ -1,11 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Disc from './Disc';
+import Magazine from './Magazine';
 
 export default (props: { identifier: string }, ref) => {
   const base = useRef(null);
   const joint = useRef(null);
 
   const [discs, setDiscs] = useState([]);
+  let { tense, setTense } = useState(false);
+  let t = false;
 
   useEffect(() => {
     base.current.addEventListener('moveX', e => {
@@ -16,7 +19,13 @@ export default (props: { identifier: string }, ref) => {
     });
 
     base.current.addEventListener('dblclick', function(e) {
-      rotateX(90);
+      if (t === false) {
+        rotateX(90);
+        t = true;
+      } else {
+        rotateX(0);
+        t = false;
+      }
     });
 
     joint.current.addEventListener('rotateX', e => {
@@ -64,8 +73,9 @@ export default (props: { identifier: string }, ref) => {
           style={{
             transformStyle: 'preserve-3d',
             border: 'solid 1px green',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
             position: 'absolute',
-            width: 100 + 'px',
+            width: props.width + 'px',
             height: props.height + 'px',
             top: 0 + 'px',
             left: 0 + 'px',
@@ -89,6 +99,7 @@ export default (props: { identifier: string }, ref) => {
                     contentsForFrontInner={disc.contentsForFrontInner}
                     discs={disc.discs}
                     height={disc.height}
+                    width={disc.width}
                   />
                 );
               }

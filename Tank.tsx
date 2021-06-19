@@ -49,7 +49,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
       ref={ref}
       style={{
         transformStyle: 'preserve-3d',
-        //perspective: 800 + 'px',
+        perspective: 800 + 'px',
         border: '1px solid red',
         width: 800 + 'px',
         height: 450 + 'px',
@@ -73,6 +73,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
                 contentsForFrontInner={disc.contentsForFrontInner}
                 discs={disc.discs}
                 height={disc.height}
+                width={disc.width}
               />
             );
           }

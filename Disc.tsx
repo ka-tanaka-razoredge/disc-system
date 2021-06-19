@@ -24,6 +24,7 @@ export default (props: { identifier: string }, ref) => {
       ref={base}
       id={props.identifier}
       style={{
+        transformStyle: 'preserve-3d',
         border: '1px solid orange',
         height: 10 + 'px',
         width: 100 + 'px',
@@ -40,7 +41,8 @@ export default (props: { identifier: string }, ref) => {
           position: 'relative',
           width: 100 + 'px',
           height: 50 + 'px',
-          transform: 'translateY(-70px) rotateX(-90deg) translateX(30px)'
+          transform:
+            'translateY(-40px) translateX(-5px) rotateX(-90deg) translateY(-30px)'
         }}
       >
         {props.contentsForFrontInner}
