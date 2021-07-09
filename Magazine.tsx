@@ -32,7 +32,9 @@ export default (props: { identifier: string }, ref) => {
     joint.current.addEventListener('rotateX', e => {
       rotateX(e.detail.value);
     });
-  });
+
+    rotateX(10);
+  }, []);
 
   const moveX = value => {
     base.current.style.left = value + 'px';

@@ -27,6 +27,18 @@ class App extends Component<AppProps, AppState> {
     if (this.counter === Number.MAX_SAFE_INTEGER) this.counter = 0;
     switch (this.counter) {
       case 1:
+        /*      
+        this.tank.current.dispatchEvent(
+          new CustomEvent('pushDisc', {
+            detail: {
+              identifier: 'tc_0_a',
+              contentsForFrontInner: ``,
+              top: 100,
+              left: 300
+            }
+          })
+        );
+*/
         this.tank.current.dispatchEvent(
           new CustomEvent('pushDisc', {
             detail: {
@@ -55,6 +67,7 @@ class App extends Component<AppProps, AppState> {
             }
           })
         );
+
         /*
         // ooMagazine_2 on ooMagazine_1
         this.tank.current.dispatchEvent(
@@ -93,28 +106,6 @@ class App extends Component<AppProps, AppState> {
           })
         );
 */
-        this.tank.current.dispatchEvent(
-          new CustomEvent('pushDisc', {
-            detail: {
-              identifier: 'tc_0_alpha',
-              contentsForFrontInner: ``,
-              top: 100,
-              left: 500
-            }
-          })
-        );
-
-        this.tank.current.dispatchEvent(
-          new CustomEvent('pushDisc', {
-            detail: {
-              identifier: 'tc_0_a',
-              contentsForFrontInner: ``,
-              top: 100,
-              left: 300
-            }
-          })
-        );
-
         break;
     }
     this.counter++;

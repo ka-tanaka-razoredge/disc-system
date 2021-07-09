@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Disc from './Disc';
 import Magazine from './Magazine';
+import MagazineB from './Magazine_b';
 
 export default React.forwardRef((props: { identifier: string }, ref) => {
   //const base = useRef(null);
@@ -21,12 +22,13 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
       setInitialized(false);
     }
     //    ref.current.style.tranform = 'rotateY(45deg) rotateX(45deg)';
-  });
+  }, []);
 
   const pushDisc = (lop = { itentifier }) => {
     console.log(discsRef.current);
     setDiscEx(discsRef.current.concat(lop));
     setTimeout(() => {
+      /*      
       document.getElementById(lop.identifier).dispatchEvent(
         new CustomEvent('moveX', {
           detail: {
@@ -41,6 +43,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
           }
         })
       );
+*/
     }, 1);
   };
 

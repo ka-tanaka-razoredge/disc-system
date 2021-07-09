@@ -10,7 +10,7 @@ export default (props: { identifier: string }, ref) => {
     base.current.addEventListener('moveY', e => {
       moveY(e.detail.value);
     });
-  });
+  }, []);
 
   const moveX = value => {
     base.current.style.left = value + 'px';
