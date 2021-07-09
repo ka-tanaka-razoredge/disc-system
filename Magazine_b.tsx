@@ -35,7 +35,7 @@ export default (props: { identifier: string }, ref) => {
 */
     rotateX(10);
 
-    let index = 1;
+    let index = 10;
     let v = 30;
     // radian = degree * ( Math.PI / 180 )
     loRef[index].current.style.transform = 'rotateX(' + v + 'deg)';
@@ -46,6 +46,7 @@ export default (props: { identifier: string }, ref) => {
 
       loRef[i].current.style.top = 10 * Math.cos(radian);
 
+      // TODO
       loRef[i].current.style.transform =
         'translateZ(' + 10 * Math.sin(radian) * n + 'px) rotateX(' + v + 'deg)';
       n++;
