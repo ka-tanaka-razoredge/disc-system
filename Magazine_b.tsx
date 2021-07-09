@@ -34,7 +34,22 @@ export default (props: { identifier: string }, ref) => {
     });
 */
     rotateX(10);
-    loRef[1].current.style.transform = 'rotateX(' + 45 + 'deg)';
+
+    let index = 1;
+    let v = 30;
+    // radian = degree * ( Math.PI / 180 )
+    loRef[index].current.style.transform = 'rotateX(' + v + 'deg)';
+    let radian = v * (Math.PI / 180);
+    let n = 1;
+    for (let i = index + 1; i <= loRef.length - 1; i++) {
+      //      loRef[i].current.style.top = Math.cos(radian);
+
+      loRef[i].current.style.top = 10 * Math.cos(radian);
+
+      loRef[i].current.style.transform =
+        'translateZ(' + 10 * Math.sin(radian) * n + 'px) rotateX(' + v + 'deg)';
+      n++;
+    }
   }, []);
 
   const moveX = value => {
@@ -86,7 +101,7 @@ export default (props: { identifier: string }, ref) => {
                 transformStyle: 'preserve-3d',
                 border: 'solid 1px red',
                 position: 'relative',
-                top: 0 + 'px',
+                top: 10 * index + 'px',
                 height: 0 + 'px',
                 transform: 'rotateX(0deg)'
               }}

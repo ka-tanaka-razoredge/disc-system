@@ -71,7 +71,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
             );
           } else {
             return (
-              <Magazine
+              <MagazineB
                 identifier={disc.identifier}
                 contentsForFrontInner={disc.contentsForFrontInner}
                 discs={disc.discs}
