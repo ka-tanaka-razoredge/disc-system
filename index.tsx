@@ -17,6 +17,7 @@ class App extends Component<AppProps, AppState> {
     this.counter = 0;
     this.timer = null;
     this.tank = React.createRef();
+    this.magazine = [];
   }
 
   componentDidMount() {
@@ -106,6 +107,41 @@ class App extends Component<AppProps, AppState> {
           })
         );
 */
+        break;
+      case 2:
+        for (let i = 0; i <= 10 - 1; i++) this.magazine.push([]);
+        this.magazine.push([
+          () => {
+            this.tank.current.dispatchEvent(
+              new CustomEvent('forwardCurrentIndex', {
+                detail: {
+                  value: 15
+                }
+              })
+            );
+          }
+        ]);
+        for (let i = 0; i <= 10 - 1; i++) this.magazine.push([]);
+        this.magazine.push([
+          () => {
+            this.tank.current.dispatchEvent(
+              new CustomEvent('forwardCurrentIndex', {
+                detail: {
+                  value: 20
+                }
+              })
+            );
+          }
+        ]);
+
+        break;
+      default:
+        if (1 <= this.magazine.length) {
+          let simultaneous = this.magazine.pop();
+          simultaneous.map(doIt => {
+            doIt();
+          });
+        }
         break;
     }
     this.counter++;

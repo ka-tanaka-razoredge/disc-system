@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useImperativeHandle } from 'react';
 import Disc from './Disc';
 import Magazine from './Magazine';
 import MagazineB from './Magazine_b';
@@ -8,10 +8,13 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
   const [initialized, setInitialized] = useState(false);
   const [discs, setDiscs] = useState([]);
   const discsRef = useRef(discs);
+  const loRef = [];
   const setDiscEx = discs => {
     discsRef.current = discs;
     setDiscs(discs);
   };
+
+  // useImperativeHandle(ref, () => ({}));
 
   useEffect(() => {
     if (initialized === false) {
@@ -19,6 +22,11 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
       ref.current.addEventListener('pushDisc', e => {
         pushDisc(e.detail);
       });
+
+      ref.current.addEventListener('forwardCurrentIndex', e => {
+        forwardCurrentIndex(e.detail);
+      });
+
       setInitialized(false);
     }
     //    ref.current.style.tranform = 'rotateY(45deg) rotateX(45deg)';
@@ -47,6 +55,14 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
     }, 1);
   };
 
+  const forwardCurrentIndex = lop => {
+    loRef[0].current.forwardCurrentIndex(lop.value);
+  };
+
+  for (let i = 0; i <= 100 - 1; i++) {
+    loRef.push(useRef(null));
+  }
+
   return (
     <div
       ref={ref}
@@ -72,6 +88,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
           } else {
             return (
               <MagazineB
+                ref={loRef[index]}
                 identifier={disc.identifier}
                 contentsForFrontInner={disc.contentsForFrontInner}
                 discs={disc.discs}

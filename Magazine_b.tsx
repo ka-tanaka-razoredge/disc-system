@@ -1,15 +1,49 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, {
+  useRef,
+  useEffect,
+  useState,
+  useImperativeHandle,
+  forwardRef
+} from 'react';
 import Disc from './Disc';
 import MetalTape from './MetalTape';
 import Magazine from './Magazine';
 
-export default (props: { identifier: string }, ref) => {
+export default forwardRef((props: { identifier: string }, ref) => {
   const base = useRef(null);
   const joint = useRef(null);
 
   const [discs, setDiscs] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   let { tense, setTense } = useState(false);
   let t = false;
+
+  useImperativeHandle(ref, () => ({
+    forwardCurrentIndex(index) {
+      console.log(index);
+      setCurrentIndex(index);
+      console.log(currentIndex);
+      let v = 30;
+      // radian = degree * ( Math.PI / 180 )
+      loRef[index].current.style.transform = 'rotateX(' + v + 'deg)';
+      let radian = v * (Math.PI / 180);
+      let n = 1;
+      for (let i = index + 1; i <= loRef.length - 1; i++) {
+        //      loRef[i].current.style.top = Math.cos(radian);
+
+        loRef[i].current.style.top = 10 * Math.cos(radian);
+
+        // TODO
+        loRef[i].current.style.transform =
+          'translateZ(' +
+          10 * Math.sin(radian) * n +
+          'px) rotateX(' +
+          v +
+          'deg)';
+        n++;
+      }
+    }
+  }));
 
   useEffect(() => {
     base.current.addEventListener('moveX', e => {
@@ -34,23 +68,6 @@ export default (props: { identifier: string }, ref) => {
     });
 */
     rotateX(10);
-
-    let index = 10;
-    let v = 30;
-    // radian = degree * ( Math.PI / 180 )
-    loRef[index].current.style.transform = 'rotateX(' + v + 'deg)';
-    let radian = v * (Math.PI / 180);
-    let n = 1;
-    for (let i = index + 1; i <= loRef.length - 1; i++) {
-      //      loRef[i].current.style.top = Math.cos(radian);
-
-      loRef[i].current.style.top = 10 * Math.cos(radian);
-
-      // TODO
-      loRef[i].current.style.transform =
-        'translateZ(' + 10 * Math.sin(radian) * n + 'px) rotateX(' + v + 'deg)';
-      n++;
-    }
   }, []);
 
   const moveX = value => {
@@ -76,7 +93,7 @@ export default (props: { identifier: string }, ref) => {
       transform: null
     });
     loRef.push(useRef(null));
-    console.log(loRef);
+    //    console.log(loRef);
   }
 
   return (
@@ -128,4 +145,4 @@ export default (props: { identifier: string }, ref) => {
       })}
     </div>
   );
-};
+});
