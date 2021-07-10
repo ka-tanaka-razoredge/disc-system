@@ -109,7 +109,7 @@ class App extends Component<AppProps, AppState> {
 */
         break;
       case 2:
-        for (let i = 0; i <= 10 - 1; i++) this.magazine.push([]);
+        for (let i = 0; i <= 1 - 1; i++) this.magazine.push([]);
         this.magazine.push([
           () => {
             this.tank.current.dispatchEvent(
@@ -121,7 +121,7 @@ class App extends Component<AppProps, AppState> {
             );
           }
         ]);
-        for (let i = 0; i <= 10 - 1; i++) this.magazine.push([]);
+        for (let i = 0; i <= 1 - 1; i++) this.magazine.push([]);
         this.magazine.push([
           () => {
             this.tank.current.dispatchEvent(
@@ -133,11 +133,23 @@ class App extends Component<AppProps, AppState> {
             );
           }
         ]);
+        for (let i = 0; i <= 1 - 1; i++) this.magazine.push([]);
+        this.magazine.push([
+          () => {
+            this.tank.current.dispatchEvent(
+              new CustomEvent('forwardCurrentIndex', {
+                detail: {
+                  value: 25
+                }
+              })
+            );
+          }
+        ]);
 
         break;
       default:
         if (1 <= this.magazine.length) {
-          let simultaneous = this.magazine.pop();
+          let simultaneous = this.magazine.shift();
           simultaneous.map(doIt => {
             doIt();
           });

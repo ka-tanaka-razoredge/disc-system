@@ -20,6 +20,11 @@ export default forwardRef((props: { identifier: string }, ref) => {
 
   useImperativeHandle(ref, () => ({
     forwardCurrentIndex(index) {
+      // doors
+      loRef.map(loRef => {
+        loRef.current.style.transform = 'rotateX(0deg)';
+      });
+
       console.log(index);
       setCurrentIndex(index);
       console.log(currentIndex);
