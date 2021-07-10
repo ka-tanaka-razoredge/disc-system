@@ -25,6 +25,8 @@ export default forwardRef((props: { identifier: string }, ref) => {
         loRef.current.style.transform = 'rotateX(0deg)';
       });
 
+      if (loRef.length - 1 < index) return;
+
       console.log(index);
       setCurrentIndex(index);
       console.log(currentIndex);

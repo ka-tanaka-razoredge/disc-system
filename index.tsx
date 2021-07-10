@@ -109,6 +109,17 @@ class App extends Component<AppProps, AppState> {
 */
         break;
       case 2:
+        this.magazine.push([
+          () => {
+            this.tank.current.dispatchEvent(
+              new CustomEvent('forwardCurrentIndex', {
+                detail: {
+                  value: 0
+                }
+              })
+            );
+          }
+        ]);
         for (let i = 0; i <= 1 - 1; i++) this.magazine.push([]);
         this.magazine.push([
           () => {
@@ -133,13 +144,23 @@ class App extends Component<AppProps, AppState> {
             );
           }
         ]);
-        for (let i = 0; i <= 1 - 1; i++) this.magazine.push([]);
         this.magazine.push([
           () => {
             this.tank.current.dispatchEvent(
               new CustomEvent('forwardCurrentIndex', {
                 detail: {
                   value: 25
+                }
+              })
+            );
+          }
+        ]);
+        this.magazine.push([
+          () => {
+            this.tank.current.dispatchEvent(
+              new CustomEvent('forwardCurrentIndex', {
+                detail: {
+                  value: 30
                 }
               })
             );
