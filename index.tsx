@@ -3,6 +3,8 @@ import { render } from 'react-dom';
 import Tank from './Tank';
 import './style.css';
 
+import { load, loadDemo } from './demo';
+
 interface AppProps {}
 interface AppState {
   name: string;
@@ -40,34 +42,7 @@ class App extends Component<AppProps, AppState> {
           })
         );
 */
-        this.tank.current.dispatchEvent(
-          new CustomEvent('pushDisc', {
-            detail: {
-              type: 'Magazine',
-              identifier: 'tc_0_alpha',
-              contentsForFrontInner: `spine`,
-              top: 100,
-              left: 500,
-              height: 300,
-              width: 300,
-              discs: [
-                [{ identifier: 'Au', contentsForFrontInner: `Au`, top: 0 }],
-                [{ identifier: 'Pt', contentsForFrontInner: `Pt`, top: 200 }],
-                [{ identifier: 'Cu', contentsForFrontInner: `Cu`, top: 100 }],
-                [
-                  {
-                    type: 'MetalTape',
-                    identifier: '『Au, Cu, Pt』',
-                    contentsForFrontInner: `<font color='green'>『Au, Cu, Pt』</font>`,
-                    top: 0,
-                    left: 110,
-                    height: 210
-                  }
-                ]
-              ]
-            }
-          })
-        );
+        eval(load());
 
         /*
         // ooMagazine_2 on ooMagazine_1
@@ -109,64 +84,7 @@ class App extends Component<AppProps, AppState> {
 */
         break;
       case 2:
-        this.magazine.push([
-          () => {
-            this.tank.current.dispatchEvent(
-              new CustomEvent('forwardCurrentIndex', {
-                detail: {
-                  value: 0
-                }
-              })
-            );
-          }
-        ]);
-        for (let i = 0; i <= 1 - 1; i++) this.magazine.push([]);
-        this.magazine.push([
-          () => {
-            this.tank.current.dispatchEvent(
-              new CustomEvent('forwardCurrentIndex', {
-                detail: {
-                  value: 15
-                }
-              })
-            );
-          }
-        ]);
-        for (let i = 0; i <= 1 - 1; i++) this.magazine.push([]);
-        this.magazine.push([
-          () => {
-            this.tank.current.dispatchEvent(
-              new CustomEvent('forwardCurrentIndex', {
-                detail: {
-                  value: 20
-                }
-              })
-            );
-          }
-        ]);
-        this.magazine.push([
-          () => {
-            this.tank.current.dispatchEvent(
-              new CustomEvent('forwardCurrentIndex', {
-                detail: {
-                  value: 25
-                }
-              })
-            );
-          }
-        ]);
-        this.magazine.push([
-          () => {
-            this.tank.current.dispatchEvent(
-              new CustomEvent('forwardCurrentIndex', {
-                detail: {
-                  value: 30
-                }
-              })
-            );
-          }
-        ]);
-
+        eval(loadDemo());
         break;
       default:
         if (1 <= this.magazine.length) {
