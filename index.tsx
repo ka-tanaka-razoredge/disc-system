@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
+
 import Tank from './Tank';
 import './style.css';
 
-import { load, loadDemo } from './demo';
+//import { load, loadDemo } from './demo';
 
 interface AppProps {}
 interface AppState {
@@ -42,7 +44,60 @@ class App extends Component<AppProps, AppState> {
           })
         );
 */
-        eval(load());
+        // eval(load());
+        this.tank.current.dispatchEvent(
+          new CustomEvent('pushDisc', {
+            detail: {
+              type: 'Magazine',
+              identifier: 'tc_0_alpha',
+              contentsForFrontInner: `spine`,
+              top: 0,
+              left: 0,
+              height: 300,
+              width: 300,
+              discs: [
+                [
+                  {
+                    identifier: 'Au',
+                    contentsForBottomInner: '燈',
+                    contentsForFrontInner: 'pecurilar solving',
+                    top: 0
+                  },
+                  {
+                    identifier: 'beta',
+                    contentsForBottomInner: '>>= reverse',
+                    top: 0,
+                    left: 150,
+                    isBottomOnly: true
+                  }
+                ],
+                [
+                  {
+                    identifier: 'Pt',
+                    contentsForFrontInner: 'factorized',
+                    top: 100,
+                    left: 50
+                  },
+                  {
+                    identifier: 'tc_b_beta',
+                    contentsForBottomInner: '>>= fillItInto...',
+                    top: 100,
+                    left: 150,
+                    isBottomOnly: true
+                  }
+                ],
+                [
+                  {
+                    identifier: 'Cu',
+                    contentsForFrontInner: `a Puzzle`,
+                    top: 200,
+                    left: 50
+                  }
+                ]
+              ]
+            }
+          })
+        );
 
         /*
         // ooMagazine_2 on ooMagazine_1
@@ -84,7 +139,7 @@ class App extends Component<AppProps, AppState> {
 */
         break;
       case 2:
-        eval(loadDemo());
+        // eval(loadDemo());
         break;
       default:
         if (1 <= this.magazine.length) {

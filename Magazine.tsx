@@ -33,7 +33,7 @@ export default (props: { identifier: string }, ref) => {
       rotateX(e.detail.value);
     });
 
-    rotateX(10);
+    rotateX(0);
   }, []);
 
   const moveX = value => {
@@ -92,7 +92,10 @@ export default (props: { identifier: string }, ref) => {
                   <Disc
                     identifier={disc.identifier}
                     contentsForFrontInner={disc.contentsForFrontInner}
+                    contentsForBottomInner={disc.contentsForBottomInner}
+                    isBottomOnly={disc.isBottomOnly}
                     top={disc.top}
+                    left={disc.left}
                   />
                 );
               } else if (disc.type === 'Magazine') {

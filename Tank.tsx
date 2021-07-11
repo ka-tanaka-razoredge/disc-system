@@ -36,7 +36,6 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
     console.log(discsRef.current);
     setDiscEx(discsRef.current.concat(lop));
     setTimeout(() => {
-      /*      
       document.getElementById(lop.identifier).dispatchEvent(
         new CustomEvent('moveX', {
           detail: {
@@ -51,7 +50,6 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
           }
         })
       );
-*/
     }, 1);
   };
 
@@ -73,6 +71,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
         width: 800 + 'px',
         height: 450 + 'px',
         position: 'relative',
+        left: 50 + 'px',
         transform: 'rotateY(40deg) rotateX(45deg)'
       }}
     >
@@ -87,7 +86,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
             );
           } else {
             return (
-              <MagazineB
+              <Magazine
                 ref={loRef[index]}
                 identifier={disc.identifier}
                 contentsForFrontInner={disc.contentsForFrontInner}

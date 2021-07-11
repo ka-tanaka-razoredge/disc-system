@@ -10,6 +10,10 @@ export default (props: { identifier: string }, ref) => {
     base.current.addEventListener('moveY', e => {
       moveY(e.detail.value);
     });
+
+    if (props.isBottomOnly) {
+      base.current.style.border = null;
+    }
   }, []);
 
   const moveX = value => {
@@ -17,6 +21,42 @@ export default (props: { identifier: string }, ref) => {
   };
   const moveY = value => {
     base.current.style.top = value + 'px';
+  };
+
+  const drawBottom = () => {
+    if (!props.isBottomOnly) {
+    } else {
+    }
+  };
+
+  const drawBottomInner = () => {
+    if (!props.contentsForBottomInner) {
+      return props.contentsForFrontInner;
+    } else {
+      return props.contentsForBottomInner;
+    }
+  };
+
+  const drawFront = () => {
+    if (!props.isBottomOnly) {
+      return (
+        <div
+          style={{
+            transformStyle: 'preserve-3d',
+            border: 'solid 1px lime',
+            //          position: 'relative',
+            width: 100 + 'px',
+            height: 50 + 'px',
+            transform:
+              'translateY(-40px) translateX(-5px) rotateX(-90deg) translateY(-30px)'
+          }}
+        >
+          {props.contentsForFrontInner}
+        </div>
+      );
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -29,24 +69,12 @@ export default (props: { identifier: string }, ref) => {
         height: 10 + 'px',
         width: 100 + 'px',
         top: props.top + 'px',
-        left: 0 + 'px',
+        left: props.left + 'px',
         position: 'absolute'
       }}
     >
-      {props.identifier}
-      <div
-        style={{
-          transformStyle: 'preserve-3d',
-          border: 'solid 1px lime',
-          //          position: 'relative',
-          width: 100 + 'px',
-          height: 50 + 'px',
-          transform:
-            'translateY(-40px) translateX(-5px) rotateX(-90deg) translateY(-30px)'
-        }}
-      >
-        {props.contentsForFrontInner}
-      </div>
+      {drawBottomInner()}
+      {drawFront()}
     </div>
   );
 };
