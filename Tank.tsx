@@ -90,7 +90,10 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
                 ref={loRef[index]}
                 identifier={disc.identifier}
                 contentsForFrontInner={disc.contentsForFrontInner}
+                contentsForBottomInner={disc.contentsForBottomInner}
                 discs={disc.discs}
+                top={disc.top}
+                left={disc.left}
                 height={disc.height}
                 width={disc.width}
               />

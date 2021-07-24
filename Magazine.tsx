@@ -56,8 +56,8 @@ export default (props: { identifier: string }, ref) => {
         border: '1px solid blue',
         height: 10 + 'px',
         width: 100 + 'px',
-        top: 0 + 'px',
-        left: 0 + 'px',
+        top: props.height + 'px',
+        left: props.top + 'px',
         position: 'absolute'
       }}
     >
@@ -104,6 +104,8 @@ export default (props: { identifier: string }, ref) => {
                     identifier={disc.identifier}
                     contentsForFrontInner={disc.contentsForFrontInner}
                     discs={disc.discs}
+                    top={disc.top}
+                    left={disc.left}
                     height={disc.height}
                     width={disc.width}
                   />

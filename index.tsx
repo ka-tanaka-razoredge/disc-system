@@ -54,44 +54,59 @@ class App extends Component<AppProps, AppState> {
               top: 0,
               left: 0,
               height: 300,
-              width: 300,
+              width: 500,
               discs: [
                 [
                   {
                     identifier: 'Au',
                     contentsForBottomInner: '燈',
-                    contentsForFrontInner: 'pecurilar solving',
+                    contentsForFrontInner: '[漲, 濺] get registered onto dcoml',
                     top: 0
-                  },
-                  {
-                    identifier: 'beta',
-                    contentsForBottomInner: '>>= reverse',
-                    top: 0,
-                    left: 150,
-                    isBottomOnly: true
                   }
                 ],
                 [
                   {
                     identifier: 'Pt',
-                    contentsForFrontInner: 'factorized',
+                    contentsForFrontInner: 'dcoml < m ',
                     top: 100,
                     left: 50
-                  },
-                  {
-                    identifier: 'tc_b_beta',
-                    contentsForBottomInner: '>>= fillItInto...',
-                    top: 100,
-                    left: 150,
-                    isBottomOnly: true
                   }
                 ],
                 [
                   {
-                    identifier: 'Cu',
-                    contentsForFrontInner: `a Puzzle`,
+                    type: 'Magazine',
+                    indentifier: 'a_alpha_on',
+                    contentsForFrontInner: `Au`,
                     top: 200,
-                    left: 50
+                    left: 200,
+                    height: 100,
+                    width: 200,
+                    discs: [
+                      [
+                        {
+                          identifier: 'Cu',
+                          contentsForBottomInner: '蓬',
+                          contentsForFrontInner: `dcoml < m capturing`,
+                          top: 0
+                        }
+                      ],
+                      [
+                        {
+                          identifier: 'Cu',
+                          contentsForBottomInner: '蔦',
+                          contentsForFrontInner: `dcoml < m target`,
+                          top: 10
+                        }
+                      ],
+                      [
+                        {
+                          identifier: 'Cu',
+                          contentsForBottomInner: '蕩',
+                          contentsForFrontInner: `dcoml < m bubbling`,
+                          top: 90
+                        }
+                      ]
+                    ]
                   }
                 ]
               ]
