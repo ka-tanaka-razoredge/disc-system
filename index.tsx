@@ -5,6 +5,7 @@ import { useParams, useHistory, useLocation } from 'react-router-dom';
 import Tank from './Tank';
 import './style.css';
 
+import { load } from './data/score_20210831';
 //import { load, loadDemo } from './demo';
 
 interface AppProps {}
@@ -44,7 +45,9 @@ class App extends Component<AppProps, AppState> {
           })
         );
 */
-        // eval(load());
+        eval(load());
+
+        /*        
         this.tank.current.dispatchEvent(
           new CustomEvent('pushDisc', {
             detail: {
@@ -113,7 +116,7 @@ class App extends Component<AppProps, AppState> {
             }
           })
         );
-
+*/
         /*
         // ooMagazine_2 on ooMagazine_1
         this.tank.current.dispatchEvent(

@@ -32,7 +32,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
     //    ref.current.style.tranform = 'rotateY(45deg) rotateX(45deg)';
   }, []);
 
-  const pushDisc = (lop = { itentifier }) => {
+  const pushDisc = (lop = { identifier }) => {
     console.log(discsRef.current);
     setDiscEx(discsRef.current.concat(lop));
     setTimeout(() => {
