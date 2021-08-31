@@ -31,7 +31,8 @@ export default (props: { identifier: string }, ref) => {
 
   const drawBottomInner = () => {
     if (!props.contentsForBottomInner) {
-      return props.contentsForFrontInner;
+      return '　';
+      //      return props.contentsForFrontInner;
     } else {
       return props.contentsForBottomInner;
     }
@@ -49,9 +50,8 @@ export default (props: { identifier: string }, ref) => {
             height: 50 + 'px',
             transform: 'rotateX(-90deg) translateY(-25px) translateZ(-46px)'
           }}
-        >
-          {props.contentsForFrontInner}
-        </div>
+          dangerouslySetInnerHTML={{ __html: props.contentsForFrontInner }}
+        />
       );
     } else {
       return null;
