@@ -11,8 +11,9 @@ export function load() {
         height: 300,
         width: 300,
         discs: [
-          [{ identifier: 'graph', contentsForFrontInner: '', top: 0, left: 0 }, { identifier: 'renderer', contentsForFrontInner: '', top: 0, left: 100 }],
-          [{ identifier: 'defense', contentsForFrontInner: 'defense', top: 0, left: 300 }],
+          [{ identifier: 'graph', contentsForFrontInner: 'A', top: 0, left: 0 }, { identifier: 'renderer', contentsForFrontInner: 'B', top: 0, left: 100 }],
+          [{ identifier: 'defense', contentsForFrontInner: 'defense', top: 0, left: 250 }],
+          [{ identifier: 'd', contentsForFrontInner: 'defense', top: 0, left: 500 }],
         ]
       }
     })

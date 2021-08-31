@@ -47,8 +47,7 @@ export default (props: { identifier: string }, ref) => {
             //          position: 'relative',
             width: 100 + 'px',
             height: 50 + 'px',
-            transform:
-              'translateY(-40px) translateX(-5px) rotateX(-90deg) translateY(-30px)'
+            transform: 'rotateX(-90deg) translateY(-25px) translateZ(-46px)'
           }}
         >
           {props.contentsForFrontInner}
