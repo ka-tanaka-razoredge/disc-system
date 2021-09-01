@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 
 export default (props: { identifier: string }, ref) => {
   const base = useRef(null);
@@ -40,6 +41,7 @@ export default (props: { identifier: string }, ref) => {
 
   const drawFront = () => {
     if (!props.isBottomOnly) {
+      let t = 'title' in props ? props.title : '';
       return (
         <div
           style={{
@@ -51,6 +53,7 @@ export default (props: { identifier: string }, ref) => {
             transform: 'rotateX(-90deg) translateY(-25px) translateZ(-46px)'
           }}
           dangerouslySetInnerHTML={{ __html: props.contentsForFrontInner }}
+          title={t}
         />
       );
     } else {

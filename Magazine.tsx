@@ -88,6 +88,7 @@ export default (props: { identifier: string }, ref) => {
           {props.discs.map((line, index) => {
             return line.map((disc, index) => {
               if ('type' in disc === false || disc.type === 'Disc') {
+                console.log(disc);
                 return (
                   <Disc
                     identifier={disc.identifier}
@@ -96,6 +97,7 @@ export default (props: { identifier: string }, ref) => {
                     isBottomOnly={disc.isBottomOnly}
                     top={disc.top}
                     left={disc.left}
+                    title={disc.title}
                   />
                 );
               } else if (disc.type === 'Magazine') {

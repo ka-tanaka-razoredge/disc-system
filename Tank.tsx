@@ -82,6 +82,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
               <Disc
                 identifier={disc.identifier}
                 contentsForFrontInner={disc.contentsForFrontInner}
+                title={disc.title}
               />
             );
           } else {

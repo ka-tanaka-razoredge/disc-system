@@ -11,9 +11,9 @@ export function load() {
         height: 300,
         width: 300,
         discs: [
-          [{ identifier: 'graph', contentsForFrontInner: 'graph', top: 0, left: 0 }, { identifier: 'renderer', contentsForFrontInner: '<span style="color: rgba(0, 0, 0, 0.5)">renderer</span>', top: 0, left: 100 }],
-          [{ identifier: 'defense', contentsForFrontInner: 'defense', top: 0, left: 250 }],
-          [{ identifier: 'd', contentsForFrontInner: 'defense', top: 0, left: 500 }],
+          [{ identifier: 'graph', contentsForFrontInner: '<span class="tooltip">graph<span class="tooltiptext tooltip-bottom">√<span style="color: rgba(0, 0, 0, 0.5);">ooGullWing</span> << graph << <span style="color: rgba(0, 0, 0, 0.5);">renderer</span></span>', top: 0, left: 0, title: ''}, { identifier: 'renderer', contentsForFrontInner: '<span style="color: rgba(0, 0, 0, 0.5)">renderer</span>', top: 0, left: 100, title: '' }],
+          [{ identifier: 'defense', contentsForFrontInner: 'defense', top: 0, left: 250, title: ''}],
+          [{ identifier: 'd', contentsForFrontInner: 'defense', top: 0, left: 500, title: '' }],
         ]
       }
     })
