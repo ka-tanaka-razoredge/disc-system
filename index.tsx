@@ -6,7 +6,8 @@ import Tank from './Tank';
 import './style.css';
 import './razoredge.css';
 
-import { load } from './data/score_20210831';
+import { load } from './data/first_story';
+//import { load } from './data/score_20210831';
 //import { load, loadDemo } from './demo';
 
 interface AppProps {}
@@ -18,7 +19,7 @@ class App extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'React'
+      name: 'React',
     };
     this.counter = 0;
     this.timer = null;
@@ -30,7 +31,7 @@ class App extends Component<AppProps, AppState> {
     this.timer = setInterval(this.doRoutine, 1000);
   }
 
-  doRoutine = function() {
+  doRoutine = function () {
     if (this.counter === Number.MAX_SAFE_INTEGER) this.counter = 0;
     switch (this.counter) {
       case 1:
@@ -163,7 +164,7 @@ class App extends Component<AppProps, AppState> {
       default:
         if (1 <= this.magazine.length) {
           let simultaneous = this.magazine.shift();
-          simultaneous.map(doIt => {
+          simultaneous.map((doIt) => {
             doIt();
           });
         }
