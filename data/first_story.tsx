@@ -31,6 +31,8 @@ export function load() {
     })
   );
 
+  
+
   this.magazine.push([
     () => {
       this.tank.current.dispatchEvent(new CustomEvent('moveY', {
@@ -49,6 +51,18 @@ export function load() {
     () => {
       this.tank.current.dispatchEvent(new CustomEvent('moveY', {
         detail: { identifier: 'tc_1_a', value: 53 }
+      }));
+    }
+  ]);
+  this.magazine.push([
+    () => {
+      this.tank.current.dispatchEvent(new CustomEvent('pushDisc', {
+        detail: {
+          identifier: 'dcoml_2_a',
+          contentsForFrontInner: '<span style="color: green;">漲</span>, <br /> <span style="color: red;">濺</span>',
+          top: 300,
+          left: 200
+        }
       }));
     }
   ]);
