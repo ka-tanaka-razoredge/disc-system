@@ -9,7 +9,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
   const [discs, setDiscs] = useState([]);
   const discsRef = useRef(discs);
   const loRef = [];
-  const setDiscEx = discs => {
+  const setDiscEx = (discs) => {
     discsRef.current = discs;
     setDiscs(discs);
   };
@@ -19,12 +19,16 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
   useEffect(() => {
     if (initialized === false) {
       // TODO: removeEventListener
-      ref.current.addEventListener('pushDisc', e => {
+      ref.current.addEventListener('pushDisc', (e) => {
         pushDisc(e.detail);
       });
 
-      ref.current.addEventListener('forwardCurrentIndex', e => {
+      ref.current.addEventListener('forwardCurrentIndex', (e) => {
         forwardCurrentIndex(e.detail);
+      });
+
+      ref.current.addEventListener('moveY', (e) => {
+        return moveY(e.detail);
       });
 
       setInitialized(false);
@@ -33,27 +37,47 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
   }, []);
 
   const pushDisc = (lop = { identifier }) => {
+    console.log('---- pushDisc ----');
     console.log(discsRef.current);
     setDiscEx(discsRef.current.concat(lop));
+    console.log(discs);
     setTimeout(() => {
       document.getElementById(lop.identifier).dispatchEvent(
         new CustomEvent('moveX', {
           detail: {
-            value: lop.left
-          }
+            value: lop.left,
+          },
         })
       );
       document.getElementById(lop.identifier).dispatchEvent(
         new CustomEvent('moveY', {
           detail: {
-            value: lop.top
-          }
+            value: lop.top,
+          },
         })
       );
     }, 1);
   };
 
-  const forwardCurrentIndex = lop => {
+  const moveY = (lop) => {
+    console.log('---- moveY ----');
+    const disc = document.getElementById(lop.identifier);
+    //    const disc = giveDisc({ identifier: lop.identifier });
+    disc.dispatchEvent(
+      new CustomEvent('moveY', {
+        detail: {
+          value: lop.value,
+        },
+      })
+    );
+  };
+
+  const giveDisc = (lop) => {
+    console.log('---- giveDisc ----');
+    return discsRef.current.find((disc) => disc.identifier === lop.identifier);
+  };
+
+  const forwardCurrentIndex = (lop) => {
     loRef[0].current.forwardCurrentIndex(lop.value);
   };
 
@@ -72,7 +96,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
         height: 450 + 'px',
         position: 'relative',
         left: 50 + 'px',
-        transform: 'rotateY(40deg) rotateX(45deg)'
+        transform: 'rotateY(40deg) rotateX(45deg)',
       }}
     >
       {discsRef.current.map((disc: { identifier }, index) => {

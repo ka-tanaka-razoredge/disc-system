@@ -33,6 +33,23 @@ export function load() {
 
   this.magazine.push([
     () => {
+      this.tank.current.dispatchEvent(new CustomEvent('moveY', {
+        detail: { identifier: 'tc_1_a', value: 51 }
+      }));
+    }
+  ]);
+  this.magazine.push([
+    () => {
+      this.tank.current.dispatchEvent(new CustomEvent('moveY', {
+        detail: { identifier: 'tc_1_a', value: 52 }
+      }));
+    }
+  ]);
+  this.magazine.push([
+    () => {
+      this.tank.current.dispatchEvent(new CustomEvent('moveY', {
+        detail: { identifier: 'tc_1_a', value: 53 }
+      }));
     }
   ]);
 `;
