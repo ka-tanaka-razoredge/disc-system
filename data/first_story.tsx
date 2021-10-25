@@ -13,6 +13,17 @@ export function load() {
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {
+        identifier: 'dcomal_0_a',
+        contentsForFrontInner: 'null',
+        top: 0,
+        left: 200
+      }
+    })
+  );
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
         identifier: 'tc_1_a',
         contentsForFrontInner: 'status: subdominant',
         top: 50,
@@ -20,6 +31,17 @@ export function load() {
       }
     })
   );
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'dcomal_1_a',
+        contentsForFrontInner: '<span style="color: red">濺</span>',
+        top: 50,
+        left: 200
+      }
+    })
+  );
+
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {
