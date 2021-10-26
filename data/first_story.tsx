@@ -103,7 +103,7 @@ export function load() {
       detail: {
         identifier: 'au_0_a',
         contentsForFrontInner: 'status: tonic',
-        top: 0,
+        top: 10,
         left: audience,
         type: 'Cube'
       }
