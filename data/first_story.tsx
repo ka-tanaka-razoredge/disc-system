@@ -3,8 +3,12 @@ export function load() {
 
   const som = 100;
   const bloom = 200;
-  const dcoml = 300;
+  const detonator = 300;
+  const dcoml = 500;
 
+  //--------------------------------------------------------------------------------
+  // sails
+  //--------------------------------------------------------------------------------
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {
@@ -12,8 +16,22 @@ export function load() {
         type: 'Sail',
         contentsForFrontInner: 'ukemochi',
         top: 0,
-        left: 100,
+        left: 200,
         width: 200,
+        height: 75,
+      }
+    })
+  );
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'sail_detonator',
+        type: 'Sail',
+        contentsForFrontInner: 'detonator',
+        top: 0,
+        left: detonator,
+        width: 100,
         height: 75,
       }
     })
@@ -26,13 +44,16 @@ export function load() {
         type: 'Sail',
         contentsForFrontInner: 'dcoml',
         top: 0,
-        left: 310,
+        left: dcoml + 10,
         width: 100,
         height: 75,
       }
     })
   );
 
+  //--------------------------------------------------------------------------------
+  // discs
+  //--------------------------------------------------------------------------------
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {

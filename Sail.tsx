@@ -30,14 +30,7 @@ export default (props: { identifier: string }, ref) => {
     }
   };
 
-  const drawBottomInner = () => {
-    if (!props.contentsForBottomInner) {
-      return '　';
-      //      return props.contentsForFrontInner;
-    } else {
-      return props.contentsForBottomInner;
-    }
-  };
+  const drawBottomInner = () => {};
 
   const drawFront = () => {
     if (!props.isBottomOnly) {
@@ -50,7 +43,7 @@ export default (props: { identifier: string }, ref) => {
             //          position: 'relative',
             width: props.width + 'px',
             height: props.height + 'px',
-            transform: 'translateY(-110px) translateX(30px) rotateX(-90deg)',
+            transform: 'translateY(-100px) rotateX(-90deg)',
           }}
           dangerouslySetInnerHTML={{ __html: props.contentsForFrontInner }}
           title={t}
