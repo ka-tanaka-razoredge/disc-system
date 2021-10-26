@@ -96,6 +96,21 @@ export function load() {
   );
 
   //--------------------------------------------------------------------------------
+  // lu<Cube>
+  //--------------------------------------------------------------------------------
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'au_0_a',
+        contentsForFrontInner: 'status: tonic',
+        top: 0,
+        left: audience,
+        type: 'Cube'
+      }
+    })
+  );
+
+  //--------------------------------------------------------------------------------
   // discs
   //--------------------------------------------------------------------------------
   this.tank.current.dispatchEvent(

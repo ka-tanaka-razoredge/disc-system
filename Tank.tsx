@@ -3,6 +3,7 @@ import Disc from './Disc';
 import Magazine from './Magazine';
 import MagazineB from './Magazine_b';
 import Sail from './Sail';
+import Cube from './Cube';
 
 export default React.forwardRef((props: { identifier: string }, ref) => {
   //const base = useRef(null);
@@ -156,6 +157,16 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
                 left={disc.left}
                 height={disc.height}
                 width={disc.width}
+              />
+            );
+          } else if (disc.type === 'Cube') {
+            return (
+              <Cube
+                identifier={disc.identifier}
+                //                contentsForFrontInner={disc.contentsForFrontInner}
+                //                title={disc.title}
+                top={disc.top}
+                left={disc.left}
               />
             );
           } else {
