@@ -38,12 +38,12 @@ export default (props: { identifier: string }, ref) => {
       return (
         <div
           style={{
-            transformStyle: 'preserve-3d',
-            border: 'solid 1px lime',
-            //          position: 'relative',
+            //            transformStyle: 'preserve-3d',
+            border: 'solid 1px rgba(0, 0, 0, 0.5)',
+            //            position: 'absolute',
             width: props.width + 'px',
             height: props.height + 'px',
-            transform: 'translateY(-90px) rotateX(-90deg) translateX(30px)',
+            transform: 'translateY(-75px)',
           }}
           dangerouslySetInnerHTML={{ __html: props.contentsForFrontInner }}
           title={t}
@@ -60,7 +60,7 @@ export default (props: { identifier: string }, ref) => {
       id={props.identifier}
       style={{
         transformStyle: 'preserve-3d',
-        border: '1px solid orange',
+        border: '1px solid blue',
         height: 1 + 'px',
         width: 100 + 'px',
         top: props.top + 'px',
@@ -68,8 +68,15 @@ export default (props: { identifier: string }, ref) => {
         position: 'absolute',
       }}
     >
-      {drawBottomInner()}
-      {drawFront()}
+      <div
+        style={{
+          height: 1 + 'px',
+          transform: 'rotateX(-90deg)',
+        }}
+      >
+        {drawBottomInner()}
+        {drawFront()}
+      </div>
     </div>
   );
 };

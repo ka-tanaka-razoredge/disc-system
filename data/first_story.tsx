@@ -10,6 +10,7 @@ export function load() {
   //--------------------------------------------------------------------------------
   // sails
   //--------------------------------------------------------------------------------
+  
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {
@@ -73,7 +74,7 @@ export function load() {
         type: 'Sail',
         contentsForFrontInner: 'dcoml',
         top: 0,
-        left: dcoml + 10,
+        left: dcoml + 100,
         width: 100,
         height: 75,
       }
@@ -93,17 +94,18 @@ export function load() {
       }
     })
   );
+/*
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {
         identifier: 'dcomal_0_a',
         contentsForFrontInner: 'null',
-        top: 0,
+        top: 10,
         left: dcoml
       }
     })
   );
-
+*/
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {
