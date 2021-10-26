@@ -22,6 +22,20 @@ export function load() {
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {
+        identifier: 'sail_dcoml',
+        type: 'Sail',
+        contentsForFrontInner: 'dcoml',
+        top: 0,
+        left: 310,
+        width: 100,
+        height: 75,
+      }
+    })
+  );
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
         identifier: 'tc_0_a',
         contentsForFrontInner: 'status: tonic',
         top: 0,
