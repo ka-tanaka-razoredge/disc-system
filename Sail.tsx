@@ -43,7 +43,7 @@ export default (props: { identifier: string }, ref) => {
             //          position: 'relative',
             width: props.width + 'px',
             height: props.height + 'px',
-            transform: 'translateY(-100px) rotateX(-90deg)',
+            transform: 'rotateX(-90deg) translateZ(-100px)',
           }}
           dangerouslySetInnerHTML={{ __html: props.contentsForFrontInner }}
           title={t}
