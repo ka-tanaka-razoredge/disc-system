@@ -44,7 +44,7 @@ export function load() {
       detail: {
         identifier: 'sail_som',
         type: 'Sail',
-        contentsForFrontInner: 'som',
+        contentsForFrontInner: 'pipelines',
         top: 0,
         left: som,
         width: 100,
