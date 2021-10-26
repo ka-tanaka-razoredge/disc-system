@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useImperativeHandle } from 'react';
 import Disc from './Disc';
 import Magazine from './Magazine';
 import MagazineB from './Magazine_b';
+import Sail from './Sail';
 
 export default React.forwardRef((props: { identifier: string }, ref) => {
   //const base = useRef(null);
@@ -107,6 +108,18 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
                 identifier={disc.identifier}
                 contentsForFrontInner={disc.contentsForFrontInner}
                 title={disc.title}
+              />
+            );
+          } else if (disc.type === 'Sail') {
+            return (
+              <Sail
+                identifier={disc.identifier}
+                contentsForFrontInner={disc.contentsForFrontInner}
+                title={disc.title}
+                top={disc.top}
+                left={disc.left}
+                height={disc.height}
+                width={disc.width}
               />
             );
           } else {

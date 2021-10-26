@@ -1,12 +1,31 @@
 export function load() {
   return `
+
+  const som = 100;
+  const bloom = 200;
+  const dcoml = 300;
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'sail_ukemochi',
+        type: 'Sail',
+        contentsForFrontInner: 'ukemochi',
+        top: 0,
+        left: 100,
+        width: 200,
+        height: 75,
+      }
+    })
+  );
+
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {
         identifier: 'tc_0_a',
         contentsForFrontInner: 'status: tonic',
         top: 0,
-        left: 100
+        left: bloom
       }
     })
   );
@@ -16,7 +35,7 @@ export function load() {
         identifier: 'dcomal_0_a',
         contentsForFrontInner: 'null',
         top: 0,
-        left: 200
+        left: dcoml
       }
     })
   );
@@ -27,7 +46,7 @@ export function load() {
         identifier: 'tc_1_a',
         contentsForFrontInner: 'status: subdominant',
         top: 50,
-        left: 100
+        left: bloom
       }
     })
   );
@@ -37,7 +56,7 @@ export function load() {
         identifier: 'dcomal_1_a',
         contentsForFrontInner: '<span style="color: red">濺</span>',
         top: 50,
-        left: 200
+        left: dcoml
       }
     })
   );
@@ -48,7 +67,18 @@ export function load() {
         identifier: 'tc_2_a',
         contentsForFrontInner: 'status: dominant',
         top: 300,
-        left: 100
+        left: bloom
+      }
+    })
+  );
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'uke_som_2_a',
+        contentsForFrontInner: 'ukemochi ON detonator',
+        top: 300,
+        left: som
       }
     })
   );
@@ -81,9 +111,9 @@ export function load() {
       this.tank.current.dispatchEvent(new CustomEvent('pushDisc', {
         detail: {
           identifier: 'dcoml_2_a',
-          contentsForFrontInner: '<span style="color: green;">漲</span>, <br /> <span style="color: red;">濺</span>',
+          contentsForFrontInner: '<span style="color: green;" class="tooltip">漲<span class="tooltiptext tooltip-bottom">漲 could be 一向聴</span></span><br /> <span style="color: red;">濺</span>',
           top: 300,
-          left: 200
+          left: dcoml
         }
       }));
     }
