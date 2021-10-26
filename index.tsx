@@ -55,6 +55,8 @@ class App extends Component<AppProps, AppState> {
   render() {
     return (
       <div>
+        <br />
+        <br />
         <Tank ref={this.tank} />
       </div>
     );

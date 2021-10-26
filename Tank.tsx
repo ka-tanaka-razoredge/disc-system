@@ -14,6 +14,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
     discsRef.current = discs;
     setDiscs(discs);
   };
+  const [context, setContext] = useState(null);
 
   // useImperativeHandle(ref, () => ({}));
 
@@ -22,6 +23,19 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
       // TODO: removeEventListener
       ref.current.addEventListener('pushDisc', (e) => {
         pushDisc(e.detail);
+        console.log(e.detail);
+
+        context.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+        context.beginPath();
+        context.moveTo(e.detail.left, 0);
+        context.lineTo(e.detail.left, 800);
+        context.stroke();
+        context.closePath();
+        context.beginPath();
+        context.moveTo(e.detail.left + e.detail.width, 0);
+        context.lineTo(e.detail.left + e.detail.width, 800);
+        context.stroke();
+        context.closePath();
       });
 
       ref.current.addEventListener('forwardCurrentIndex', (e) => {
@@ -32,7 +46,28 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
         return moveY(e.detail);
       });
 
-      setInitialized(false);
+      const canvas = document.getElementById('tank-canvas');
+      console.log('---- useEffect ----');
+      console.log(canvas);
+      const context = canvas.getContext('2d');
+      console.log(context);
+      context.beginPath();
+      context.moveTo(10, 10);
+      context.lineTo(10, 100);
+      context.stroke();
+      context.closePath();
+      context.beginPath();
+      context.moveTo(5, 90);
+      context.lineTo(10, 100);
+      context.stroke();
+      context.closePath();
+      context.beginPath();
+      context.moveTo(15, 90);
+      context.lineTo(10, 100);
+      context.stroke();
+      context.closePath();
+      context.fillText('t', 15, 15);
+      setContext(context);
     }
     //    ref.current.style.tranform = 'rotateY(45deg) rotateX(45deg)';
   }, []);
@@ -100,6 +135,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
         transform: 'rotateY(40deg) rotateX(45deg)',
       }}
     >
+      <canvas id="tank-canvas" width={800} height={450}></canvas>
       {discsRef.current.map((disc: { identifier }, index) => {
         if (discsRef.current.indexOf(disc.identifier) == -1) {
           if ('type' in disc === false || disc.type === 'Disc') {
