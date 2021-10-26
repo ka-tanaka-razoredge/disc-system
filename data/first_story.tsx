@@ -1,9 +1,10 @@
 export function load() {
   return `
 
-  const som = 100;
-  const bloom = 200;
-  const detonator = 300;
+  const bloom = 100;
+  const som = 200;
+  const ukemochi = 300;
+  const detonator = 400;
   const dcoml = 500;
 
   //--------------------------------------------------------------------------------
@@ -12,11 +13,39 @@ export function load() {
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {
+        identifier: 'sail_bloom',
+        type: 'Sail',
+        contentsForFrontInner: 'bloom',
+        top: 0,
+        left: bloom,
+        width: som,
+        height: 75,
+      }
+    })
+  );
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'sail_som',
+        type: 'Sail',
+        contentsForFrontInner: 'som',
+        top: 0,
+        left: som,
+        width: som,
+        height: 75,
+      }
+    })
+  );
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
         identifier: 'sail_ukemochi',
         type: 'Sail',
         contentsForFrontInner: 'ukemochi',
         top: 0,
-        left: 200,
+        left: ukemochi,
         width: 200,
         height: 75,
       }
@@ -28,7 +57,7 @@ export function load() {
       detail: {
         identifier: 'sail_detonator',
         type: 'Sail',
-        contentsForFrontInner: 'detonator',
+        contentsForFrontInner: 'provider',
         top: 0,
         left: detonator,
         width: 100,
