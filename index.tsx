@@ -54,7 +54,7 @@ class App extends Component<AppProps, AppState> {
 
   render() {
     return (
-      <div style={{ border: '1px solid black' }}>
+      <div style={{}}>
         <Tank ref={this.tank} />
       </div>
     );
