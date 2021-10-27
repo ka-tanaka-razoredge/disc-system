@@ -224,7 +224,7 @@ export function load() {
         detail: {
           identifier: 'au_' + i + '_a',
           contentsForFrontInner: 'status: tonic',
-          top: 10 * (i + 1),
+          top: 10 * i,
           left: audience + 1,
           type: 'Cube',
           z: 50
@@ -268,13 +268,23 @@ export function load() {
       }));
     }
   ]);
+*/
   this.magazine.push([
     () => {
-      this.tank.current.dispatchEvent(new CustomEvent('moveY', {
-        detail: { identifier: 'tc_1_a', value: 53 }
-      }));
+      this.tank.current.dispatchEvent(
+        new CustomEvent('pushDisc', {
+          detail: {
+            identifier: 'hand_sex_a',
+            contentsForFrontInner: '逆転勝利',
+            top: 350,
+            left: 1000,
+            height: 100,
+            type: 'MetalTape',
+          }
+        })
+      );
     }
   ]);
-*/
+
 `;
 }

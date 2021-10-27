@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useImperativeHandle } from 'react';
 import Disc from './Disc';
+import MetalTape from './MetalTape';
 import Magazine from './Magazine';
 import MagazineB from './Magazine_b';
 import Sail from './Sail';
@@ -143,7 +144,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
         height: 450 + 'px',
         position: 'relative',
         left: 50 + 'px',
-        transform: 'rotateY(40deg) rotateX(45deg)',
+        transform: 'rotateY(40deg) rotateX(60deg)',
       }}
     >
       <canvas id="tank-canvas" width={800} height={450}></canvas>
@@ -178,6 +179,16 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
                 top={disc.top}
                 left={disc.left}
                 z={disc.z}
+              />
+            );
+          } else if (disc.type === 'MetalTape') {
+            return (
+              <MetalTape
+                identifier={disc.identifier}
+                contentsForFrontInner={disc.contentsForFrontInner}
+                top={disc.top}
+                left={disc.left}
+                height={disc.height}
               />
             );
           } else {
