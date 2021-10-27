@@ -6,7 +6,7 @@ import Tank from './Tank';
 import './style.css';
 import './razoredge.css';
 
-import { load } from './data/first_story';
+import { load } from './data/first_story/first_story';
 //import { load } from './data/score_20210831';
 //import { load, loadDemo } from './demo';
 
@@ -54,9 +54,7 @@ class App extends Component<AppProps, AppState> {
 
   render() {
     return (
-      <div>
-        <br />
-        <br />
+      <div style={{ border: '1px solid black' }}>
         <Tank ref={this.tank} />
       </div>
     );
