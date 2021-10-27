@@ -7,6 +7,8 @@ export function load() {
   const ukemochi = 430;
   const detonator = 540;
   const dcoml = 650;
+  const oilField = 800;
+  const rig = 900;
 
   //--------------------------------------------------------------------------------
   // sails
@@ -89,6 +91,48 @@ export function load() {
         contentsForFrontInner: 'dcoml',
         top: 0,
         left: dcoml,
+        width: 100,
+        height: 75,
+      }
+    })
+  );
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'sail_dcoml',
+        type: 'Sail',
+        contentsForFrontInner: 'dcoml',
+        top: 0,
+        left: dcoml,
+        width: 100,
+        height: 75,
+      }
+    })
+  );
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'sail_oilField',
+        type: 'Sail',
+        contentsForFrontInner: 'oilField',
+        top: 0,
+        left: oilField,
+        width: 100,
+        height: 75,
+      }
+    })
+  );
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'sail_rig',
+        type: 'Sail',
+        contentsForFrontInner: 'rig',
+        top: 0,
+        left: rig,
         width: 100,
         height: 75,
       }
