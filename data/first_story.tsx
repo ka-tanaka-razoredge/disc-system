@@ -96,21 +96,6 @@ export function load() {
   );
 
   //--------------------------------------------------------------------------------
-  // lu<Cube>
-  //--------------------------------------------------------------------------------
-  this.tank.current.dispatchEvent(
-    new CustomEvent('pushDisc', {
-      detail: {
-        identifier: 'au_0_a',
-        contentsForFrontInner: 'status: tonic',
-        top: 10,
-        left: audience,
-        type: 'Cube'
-      }
-    })
-  );
-
-  //--------------------------------------------------------------------------------
   // discs
   //--------------------------------------------------------------------------------
   this.tank.current.dispatchEvent(
@@ -229,6 +214,61 @@ export function load() {
       left: dcoml
     }
   }));
+
+  //--------------------------------------------------------------------------------
+  // lu<Cube>
+  //--------------------------------------------------------------------------------
+  for (let i = 0; i <= 25 - 1; i++) {
+    this.tank.current.dispatchEvent(
+      new CustomEvent('pushDisc', {
+        detail: {
+          identifier: 'au_' + i + '_a',
+          contentsForFrontInner: 'status: tonic',
+          top: 10 * (i + 1),
+          left: audience + 1,
+          type: 'Cube',
+          z: 50
+        }
+      })
+    );
+  }
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'au_28_a',
+        contentsForFrontInner: 'status: tonic',
+        top: 280,
+        left: audience,
+        type: 'Cube',
+        z: 20
+      }
+    })
+  );
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'au_29_a',
+        contentsForFrontInner: 'status: tonic',
+        top: 290,
+        left: audience,
+        type: 'Cube',
+        z: 10
+      }
+    })
+  );
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'au_30_a',
+        contentsForFrontInner: 'status: tonic',
+        top: 300,
+        left: audience,
+        type: 'Cube',
+        z: 70
+      }
+    })
+  );
 
 
 

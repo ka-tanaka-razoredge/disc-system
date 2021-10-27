@@ -10,6 +10,9 @@ export default (props: { identifier: string }, ref) => {
     base.current.addEventListener('moveY', (e) => {
       moveY(e.detail.value);
     });
+    base.current.addEventListener('moveZ', (e) => {
+      moveZ(e.detail.value);
+    });
   }, []);
 
   const moveX = (value) => {
@@ -18,13 +21,17 @@ export default (props: { identifier: string }, ref) => {
   const moveY = (value) => {
     base.current.style.top = value + 'px';
   };
+  const moveZ = (value) => {
+    base.current.style.transform = 'translateZ(' + value + 'px)';
+  };
+
   return (
     <div
       ref={base}
       id={props.identifier}
       style={{
         transformStyle: 'preserve-3d',
-        border: '1px solid black',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         height: 10 + 'px',
         width: 10 + 'px',
         top: props.top + 'px',
@@ -32,6 +39,15 @@ export default (props: { identifier: string }, ref) => {
         position: 'absolute',
       }}
     >
+      <div
+        style={{
+          position: 'absolute',
+          backgroundColor: 'rgba(0, 0, 0, 0.1)',
+          height: 10 + 'px',
+          width: 10 + 'px',
+          transform: 'translateZ(-' + props.z + 'px)',
+        }}
+      ></div>
       <div
         style={{
           position: 'absolute',
@@ -45,6 +61,7 @@ export default (props: { identifier: string }, ref) => {
         style={{
           height: 1 + 'px',
           transform: 'rotateX(90deg)',
+          position: 'absolute',
         }}
       >
         <div

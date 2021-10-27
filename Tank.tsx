@@ -93,6 +93,16 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
           },
         })
       );
+
+      if ('z' in lop) {
+        document.getElementById(lop.identifier).dispatchEvent(
+          new CustomEvent('moveZ', {
+            detail: {
+              value: lop.z,
+            },
+          })
+        );
+      }
     }, 1);
   };
 
@@ -167,6 +177,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
                 //                title={disc.title}
                 top={disc.top}
                 left={disc.left}
+                z={disc.z}
               />
             );
           } else {
