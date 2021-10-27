@@ -76,9 +76,7 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
 
   const pushDisc = (lop = { identifier }) => {
     console.log('---- pushDisc ----');
-    console.log(discsRef.current);
     setDiscEx(discsRef.current.concat(lop));
-    console.log(discs);
     setTimeout(() => {
       document.getElementById(lop.identifier).dispatchEvent(
         new CustomEvent('moveX', {
