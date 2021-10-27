@@ -233,42 +233,23 @@ export function load() {
     );
   }
 
-  this.tank.current.dispatchEvent(
-    new CustomEvent('pushDisc', {
-      detail: {
-        identifier: 'au_28_a',
-        contentsForFrontInner: 'status: tonic',
-        top: 280,
-        left: audience,
-        type: 'Cube',
-        z: 20
-      }
-    })
-  );
-  this.tank.current.dispatchEvent(
-    new CustomEvent('pushDisc', {
-      detail: {
-        identifier: 'au_29_a',
-        contentsForFrontInner: 'status: tonic',
-        top: 290,
-        left: audience,
-        type: 'Cube',
-        z: 10
-      }
-    })
-  );
-  this.tank.current.dispatchEvent(
-    new CustomEvent('pushDisc', {
-      detail: {
-        identifier: 'au_30_a',
-        contentsForFrontInner: 'status: tonic',
-        top: 300,
-        left: audience,
-        type: 'Cube',
-        z: 70
-      }
-    })
-  );
+  let loZ = [];
+  loZ = [60, 40, 10, 60, 100];
+  for (let i = 0; i <= 5 - 1; i++) {
+    this.tank.current.dispatchEvent(
+      new CustomEvent('pushDisc', {
+        detail: {
+          identifier: 'au_' + (25 + i) + '_a',
+          contentsForFrontInner: 'status: tonic',
+          top: 10 * (i + 25),
+          left: audience,
+          type: 'Cube',
+          z: loZ[i]
+        }
+      })
+    );
+  }
+
 
 
 
