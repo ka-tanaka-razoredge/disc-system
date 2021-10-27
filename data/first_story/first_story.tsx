@@ -100,20 +100,6 @@ export function load() {
   this.tank.current.dispatchEvent(
     new CustomEvent('pushDisc', {
       detail: {
-        identifier: 'sail_dcoml',
-        type: 'Sail',
-        contentsForFrontInner: 'dcoml',
-        top: 0,
-        left: dcoml,
-        width: 100,
-        height: 75,
-      }
-    })
-  );
-
-  this.tank.current.dispatchEvent(
-    new CustomEvent('pushDisc', {
-      detail: {
         identifier: 'sail_oilField',
         type: 'Sail',
         contentsForFrontInner: 'oilField',
