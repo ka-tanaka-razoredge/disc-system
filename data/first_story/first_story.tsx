@@ -132,6 +132,17 @@ export function load() {
     new CustomEvent('pushDisc', {
       detail: {
         identifier: 'tc_0_a',
+        contentsForFrontInner: "<img src='http://razor-edge.net/_resource/gif_sound_Ingeji3.gif' />",
+        top: 200,
+        left: bloom
+      }
+    })
+  );
+
+  this.tank.current.dispatchEvent(
+    new CustomEvent('pushDisc', {
+      detail: {
+        identifier: 'tc_0_a',
         contentsForFrontInner: 'status: tonic',
         top: 0,
         left: bloom
