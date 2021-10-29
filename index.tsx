@@ -5,7 +5,6 @@ import { useParams, useHistory, useLocation } from 'react-router-dom';
 import Tank from './Tank';
 import './style.css';
 import './razoredge.css';
-import anime_00000100 from './logo_1.png';
 
 import { load } from './data/first_story/first_story';
 //import { load } from './data/score_20210831';
@@ -56,7 +55,6 @@ class App extends Component<AppProps, AppState> {
   render() {
     return (
       <div style={{}}>
-        <img src={anime_00000100} />
         <Tank ref={this.tank} />
       </div>
     );
