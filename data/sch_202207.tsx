@@ -32,7 +32,7 @@ export function load() {
         identifier: 'tc_1_b',
         contentsForFrontInner: ">>= rig_2 // throw({what: applier})",
         top: 100,
-        left: bloom
+        left: 10
       }
     })
 
