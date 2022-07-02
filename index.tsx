@@ -6,7 +6,7 @@ import Tank from './Tank';
 import './style.css';
 import './razoredge.css';
 
-import { load } from './data/ukemochi';
+import { load } from './data/sch_202207';
 //import { load } from './data/not_interface';
 //import { load } from './data/first_story/first_story';
 //import { load } from './data/score_20210831';
