@@ -30,8 +30,8 @@ export function load() {
       event: 'pushDisc',
       detail: {
         identifier: 'tc_1_b',
-        contentsForFrontInner: ">>= rig_2 // throw({what: applier})",
-        top: 100,
+        contentsForFrontInner: "旅行",
+        top: 440,
         left: 10
       }
     })
