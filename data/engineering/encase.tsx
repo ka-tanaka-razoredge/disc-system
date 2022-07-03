@@ -16,7 +16,7 @@ export function load() {
       event: 'pushDisc',
       detail: {
         identifier: 'tc_3_aa',
-        contentsForFrontInner: "褐 ON 一攫千金able",
+        contentsForFrontInner: "褐 ON ooVb",
         top: 30,
         left: 500
       }
@@ -29,7 +29,7 @@ export function load() {
       event: 'pushDisc',
       detail: {
         identifier: 'tc_1_a',
-        contentsForFrontInner: "向聴数: 0",
+        contentsForFrontInner: "ooVb",
         top: 0,
         left: 10
       }
