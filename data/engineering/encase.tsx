@@ -1,6 +1,5 @@
 export function load() {
   return `
-
     const dispatchEvent = (lop) => {
       this.tank.current.dispatchEvent(
         new CustomEvent(lop.event, {
@@ -10,7 +9,7 @@ export function load() {
     };
 
     //--------------------------------------------------------------------------------
-    // sails
+    // rels
     //--------------------------------------------------------------------------------
     dispatchEvent({
       event: 'pushDisc',
@@ -44,27 +43,5 @@ export function load() {
         left: 200
       }
     })
-
-    //--------------------------------------------------------------------------------
-    // 
-    //--------------------------------------------------------------------------------
-/*    
-    this.magazine.push([
-      () => {
-        this.tank.current.dispatchEvent(
-          new CustomEvent('pushDisc', {
-            detail: {
-              identifier: 'hand_sex_a',
-              contentsForFrontInner: 'flighted',
-              top: 100,
-              left: 300,
-              height: 100,
-              type: 'MetalTape',
-            }
-          })
-        );
-      }
-    ]);
-*/
   `;
 }
