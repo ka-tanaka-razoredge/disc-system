@@ -39,7 +39,7 @@ export function load() {
       event: 'pushDisc',
       detail: {
         identifier: 'tc_1_b',
-        contentsForFrontInner: ">>= encase(&#123;closure: 褐&#125;)",
+        contentsForFrontInner: ">>= encase(&#123;case: 褐&#125;)",
         top: 20,
         left: 200
       }
