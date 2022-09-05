@@ -9,6 +9,24 @@ export function load() {
     };
 
     //--------------------------------------------------------------------------------
+    // sails
+    //--------------------------------------------------------------------------------
+    this.tank.current.dispatchEvent(
+      new CustomEvent('pushDisc', {
+        detail: {
+          identifier: 'tc_1_a',
+          type: 'Sail',
+          contentsForFrontInner: 'ooAbstractBud',
+          top: 0,
+          left: 0,
+          width: 100,
+          height: 75,
+        }
+      })
+    );
+  
+
+    //--------------------------------------------------------------------------------
     // rels
     //--------------------------------------------------------------------------------
     dispatchEvent({
@@ -24,15 +42,6 @@ export function load() {
     //--------------------------------------------------------------------------------
     // discs
     //--------------------------------------------------------------------------------
-    dispatchEvent({
-      event: 'pushDisc',
-      detail: {
-        identifier: 'tc_1_a',
-        contentsForFrontInner: "ooAbstructBud",
-        top: 0,
-        left: 10
-      }
-    })
     dispatchEvent({
       event: 'pushDisc',
       detail: {
@@ -67,7 +76,7 @@ export function load() {
       event: 'pushDisc',
       detail: {
         identifier: 'tc_1_c',
-        contentsForFrontInner: 'ooConfetti</span>',
+        contentsForFrontInner: 'ooConfetti: <span color="blue">伎</span>',
         top: 200,
         left: 300
       }
@@ -90,6 +99,16 @@ export function load() {
         identifier: 'tc_2_agt',
         contentsForFrontInner: "[仁, 伎] >>= mesh()",
         top: 220,
+        left: 500
+      }
+    })
+
+    dispatchEvent({
+      event: 'pushDisc',
+      detail: {
+        identifier: 'tc_3_agt',
+        contentsForFrontInner: '池 < "release"',
+        top: 300,
         left: 500
       }
     })
