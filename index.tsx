@@ -6,7 +6,7 @@ import Tank from './Tank';
 import './style.css';
 import './razoredge.css';
 
-import { load } from './data/story/red_eye';
+import { load } from './data/story/pink_lady';
 //import { load } from './data/engineering/encase';
 //import { load } from './data/not_interface';
 //import { load } from './data/first_story/first_story';
