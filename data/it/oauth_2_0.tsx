@@ -144,7 +144,7 @@ export function load() {
       detail: {
         identifier: 'code-',
         contentsForFrontInner: '侍が認可ダイアログにYesと答える',
-        top: 350,
+        top: 400,
         left: alpha
       }
     })  
