@@ -138,10 +138,10 @@ export default React.forwardRef((props: { identifier: string }, ref) => {
         transformStyle: 'preserve-3d',
         perspective: 1600 + 'px',
         border: '1px solid red',
-        width: 800 + 'px',
-        height: 450 + 'px',
+        width: 1600 + 'px',
+        height: 900 + 'px',
         position: 'relative',
-        left: 50 + 'px',
+        left: 100 + 'px',
         transform: 'rotateY(40deg) rotateX(60deg)',
       }}
     >
