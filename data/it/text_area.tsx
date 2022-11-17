@@ -65,7 +65,7 @@ export function load() {
           type: 'Sail',
           contentsForFrontInner: "<font color='blue'>代</font>: TextArea",
           top: 0,
-          left: delta,
+          left: 500,
           width: 100,
           height: 75,
         }
@@ -95,7 +95,7 @@ export function load() {
         identifier: 'textArea_el_1',
         contentsForFrontInner: 'onInput => update(this.isValid)',
         top: 10,
-        left: 460
+        left: 510
       }
     })
 
